@@ -38,9 +38,15 @@ export default function Footer() {
       <footer className="footer">
         <div className="footer-inner">
           <div className="footer-brand">
-            <div className="footer-logo">A</div>
-            <span className="footer-logo-text">ABTalks</span>
-          </div>
+  <span style={{
+    fontSize: '18px',
+    fontWeight: '800',
+    fontFamily: 'var(--font-display)',
+    letterSpacing: '0.06em',
+    color: 'var(--primary)',
+    textTransform: 'uppercase',
+  }}>AB <span style={{ fontWeight: '400', letterSpacing: '0.04em' }}>TALKS</span></span>
+</div>
 
           <div className="footer-links">
             <a href="#how-it-works">How it works</a>

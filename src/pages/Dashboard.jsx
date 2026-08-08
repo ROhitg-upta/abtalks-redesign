@@ -21,9 +21,15 @@ export default function Dashboard() {
   return (
     <div className="dashboard">
       <header className="dash-navbar">
-        <Link to="/" className="dash-logo">
-          <div className="dash-logo-mark">A</div>
-          <span>ABTalks</span>
+        <Link to="/" className="dash-logo" style={{ textDecoration: 'none' }}>
+          <span style={{
+            fontSize: '18px',
+            fontWeight: '800',
+            fontFamily: 'var(--font-display)',
+            letterSpacing: '0.06em',
+            color: 'var(--primary)',
+            textTransform: 'uppercase',
+          }}>AB <span style={{ fontWeight: '400', letterSpacing: '0.04em' }}>TALKS</span></span>
         </Link>
         <div className="dash-avatar">{student.avatar}</div>
       </header>
@@ -113,14 +119,21 @@ export default function Dashboard() {
               <span className="streak-fire">🏆</span>
             </div>
             {student.rank ? (
-  <>
-    <div className="rank-number-display">
-      <span className="rank-hash">#</span>
-      {student.rank}
-      <span className="rank-of">of {student.totalStudents.toLocaleString()}</span>
-    </div>
-    <div className="xp-pill">⚡ {student.xp.toLocaleString()} XP</div>
-  </>
+              <>
+                <div className="rank-display">
+                  <span className="rank-hash">#</span>
+                  <span className="rank-big-number">{student.rank}</span>
+                </div>
+                <p className="rank-out-of">
+                  out of <strong>{student.totalStudents.toLocaleString()}</strong> students
+                </p>
+                <div className="rank-footer-row">
+                  <span className="rank-percentile-badge">
+                    Top {Math.max(1, Math.round((student.rank / student.totalStudents) * 100))}%
+                  </span>
+                  <span className="rank-xp">{student.xp.toLocaleString()} XP</span>
+                </div>
+              </>
             ) : (
               <p className="streak-empty-msg">
                 Complete your first day to enter the leaderboard.
