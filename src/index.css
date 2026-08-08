@@ -934,10 +934,12 @@ img {
 
 /* TODAY'S TASK CARD */
 .today-task-card {
-  background: #0a0a0a;
+  background: #fff;
+  border: 1px solid #eceef1;
   border-radius: 20px;
   padding: 28px 24px;
-  color: #fff;
+  color: #0a0a0a;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
 .today-task-header {
@@ -945,7 +947,7 @@ img {
 }
 
 .today-task-header .eyebrow {
-  color: #a5b4fc;
+  color: #4f46e5;
 }
 
 .today-task-title {
@@ -957,7 +959,7 @@ img {
 
 .today-task-topic {
   font-size: 0.9rem;
-  color: #d4d4d8;
+  color: #6b7280;
   margin-bottom: 20px;
 }
 
@@ -1211,4 +1213,250 @@ img {
   .achievements-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ===== DAY CHALLENGE PAGE ===== */
+
+.day-page {
+  min-height: 100vh;
+  background: #fafafa;
+}
+
+.day-back-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.day-back-link:hover {
+  color: #0a0a0a;
+}
+
+.day-main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 32px 18px 60px;
+}
+
+.day-header {
+  margin-bottom: 24px;
+}
+
+.day-title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(1.5rem, 5vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0a0a0a;
+  margin: 6px 0 6px;
+}
+
+.day-topic {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 14px;
+}
+
+.day-meta-row {
+  display: flex;
+  gap: 8px;
+}
+
+.status-chip {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.status-completed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status-pending {
+  background: #fef9c3;
+  color: #a16207;
+}
+
+.status-upcoming {
+  background: #f0f0f2;
+  color: #71717a;
+}
+
+/* SECTION CARDS */
+.day-section-card {
+  background: #fff;
+  border: 1px solid #eceef1;
+  border-radius: 18px;
+  padding: 24px 22px;
+  margin-bottom: 16px;
+}
+
+.day-section-title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0a0a0a;
+  margin-bottom: 12px;
+}
+
+.day-desc-text {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #3f3f46;
+  margin-bottom: 20px;
+}
+
+.day-requirements h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0a0a0a;
+  margin-bottom: 10px;
+}
+
+.day-requirements ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.day-requirements li {
+  font-size: 0.88rem;
+  color: #52525b;
+  padding-left: 20px;
+  position: relative;
+}
+
+.day-requirements li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #4f46e5;
+  font-weight: 700;
+}
+
+/* LOCKED STATE */
+.day-locked-card {
+  background: #fff;
+  border: 1px dashed #d4d4d8;
+  border-radius: 18px;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.lock-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.day-locked-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0a0a0a;
+  margin-bottom: 6px;
+}
+
+.day-locked-card p {
+  font-size: 0.88rem;
+  color: #a5a5ad;
+  margin-bottom: 20px;
+}
+
+/* SUBMISSION FORM */
+.submission-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #27272a;
+}
+
+.form-input {
+  font-size: 0.9rem;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e4e4e7;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+.btn-full {
+  width: 100%;
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* SUBMISSION SUCCESS */
+.submission-success {
+  text-align: center;
+  padding: 12px 0;
+}
+
+.success-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #16a34a;
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+}
+
+.success-text {
+  font-size: 0.92rem;
+  color: #3f3f46;
+  margin-bottom: 18px;
+}
+
+.submission-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.submission-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4f46e5;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+  background: #f5f5ff;
+  transition: background 0.2s ease;
+}
+
+.submission-link:hover {
+  background: #ececff;
+}
+
+.btn-text-edit {
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  color: #a5a5ad;
+  text-decoration: underline;
+  cursor: pointer;
 }
