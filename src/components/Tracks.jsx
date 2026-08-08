@@ -11,7 +11,6 @@ const fadeUp = {
   }),
 };
 
-// Professional SVG Icons
 const Icons = {
   webdev: (
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -40,28 +39,27 @@ const Icons = {
   ),
 };
 
+/* Alpha-based theme colors — these blend correctly on BOTH light and dark
+   surfaces because they're translucent overlays, not solid hex fills. */
 const TRACK_THEMES = {
   webdev: {
-    color: "#6366F1",
-    bg: "#EEF2FF",
-    darkBg: "#1E1B4B",
-    border: "#C7D2FE",
+    color: "#818CF8",
+    bgSoft: "rgba(99, 102, 241, 0.14)",
+    borderSoft: "rgba(99, 102, 241, 0.35)",
     gradient: "linear-gradient(135deg, #6366F1, #8B5CF6)",
     label: "Most Popular",
   },
   dsa: {
-    color: "#10B981",
-    bg: "#ECFDF5",
-    darkBg: "#022C22",
-    border: "#6EE7B7",
+    color: "#34D399",
+    bgSoft: "rgba(16, 185, 129, 0.14)",
+    borderSoft: "rgba(16, 185, 129, 0.35)",
     gradient: "linear-gradient(135deg, #10B981, #059669)",
     label: "Interview Focused",
   },
   aiml: {
-    color: "#F59E0B",
-    bg: "#FFFBEB",
-    darkBg: "#1C0A00",
-    border: "#FCD34D",
+    color: "#FBBF24",
+    bgSoft: "rgba(245, 158, 11, 0.14)",
+    borderSoft: "rgba(245, 158, 11, 0.35)",
     gradient: "linear-gradient(135deg, #F59E0B, #EF4444)",
     label: "Trending 🔥",
   },
@@ -73,7 +71,6 @@ export default function Tracks() {
 
   return (
     <section id="tracks" style={{ padding: "80px 20px", maxWidth: "1100px", margin: "0 auto" }}>
-      {/* Header */}
       <motion.div
         style={{ textAlign: "center", marginBottom: "48px" }}
         variants={fadeUp}
@@ -89,8 +86,7 @@ export default function Tracks() {
         </p>
       </motion.div>
 
-      {/* Cards grid */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
+      <div className="tracks-cards-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
         {tracks.map((track, i) => {
           const theme = TRACK_THEMES[track.id];
           return (
@@ -104,7 +100,7 @@ export default function Tracks() {
               onClick={() => navigate("/dashboard")}
               style={{
                 background: "var(--surface)",
-                border: "1px solid var(--border)",
+                border: `1px solid ${theme.borderSoft}`,
                 borderRadius: "20px",
                 padding: "28px 24px",
                 cursor: "pointer",
@@ -116,20 +112,16 @@ export default function Tracks() {
               }}
               whileHover={{
                 y: -6,
-                boxShadow: `0 20px 40px ${theme.color}20`,
-                borderColor: theme.border,
+                boxShadow: `0 20px 40px ${theme.color}33`,
               }}
             >
-              {/* Top accent line */}
               <div style={{
                 position: "absolute",
                 top: 0, left: 0, right: 0,
                 height: "3px",
                 background: theme.gradient,
-                borderRadius: "20px 20px 0 0",
               }} />
 
-              {/* Label badge */}
               <div style={{
                 position: "absolute",
                 top: "16px",
@@ -137,21 +129,20 @@ export default function Tracks() {
                 fontSize: "0.65rem",
                 fontWeight: 700,
                 color: theme.color,
-                background: theme.bg,
+                background: theme.bgSoft,
                 padding: "3px 8px",
                 borderRadius: "999px",
-                border: `1px solid ${theme.border}`,
+                border: `1px solid ${theme.borderSoft}`,
               }}>
                 {theme.label}
               </div>
 
-              {/* Icon */}
               <div style={{
                 width: "52px",
                 height: "52px",
                 borderRadius: "14px",
-                background: theme.bg,
-                border: `1.5px solid ${theme.border}`,
+                background: theme.bgSoft,
+                border: `1.5px solid ${theme.borderSoft}`,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -162,7 +153,6 @@ export default function Tracks() {
                 {Icons[track.icon] || Icons.webdev}
               </div>
 
-              {/* Title + desc */}
               <h3 style={{
                 fontSize: "1.05rem",
                 fontWeight: 700,
@@ -183,24 +173,22 @@ export default function Tracks() {
                 {track.description}
               </p>
 
-              {/* Topics */}
               <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "20px" }}>
                 {track.topics.slice(0, 4).map((topic) => (
                   <span key={topic} style={{
                     fontSize: "0.7rem",
                     fontWeight: 600,
                     color: theme.color,
-                    background: theme.bg,
+                    background: theme.bgSoft,
                     padding: "4px 10px",
                     borderRadius: "999px",
-                    border: `1px solid ${theme.border}`,
+                    border: `1px solid ${theme.borderSoft}`,
                   }}>
                     {topic}
                   </span>
                 ))}
               </div>
 
-              {/* Footer */}
               <div style={{
                 display: "flex",
                 alignItems: "center",
@@ -212,8 +200,8 @@ export default function Tracks() {
                   <div style={{
                     width: "6px", height: "6px",
                     borderRadius: "50%",
-                    background: "#10B981",
-                    boxShadow: "0 0 0 2px #D1FAE5",
+                    background: theme.color,
+                    boxShadow: `0 0 0 3px ${theme.bgSoft}`,
                   }} />
                   <span style={{ fontSize: "0.72rem", fontWeight: 600, color: "var(--muted)" }}>
                     {track.students.toLocaleString()} enrolled
@@ -235,10 +223,9 @@ export default function Tracks() {
         })}
       </div>
 
-      {/* Mobile responsive */}
       <style>{`
         @media (max-width: 720px) {
-          #tracks > div:last-child {
+          .tracks-cards-grid {
             grid-template-columns: 1fr !important;
           }
         }
