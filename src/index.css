@@ -1059,3 +1059,156 @@ img {
     grid-template-columns: repeat(8, 1fr);
   }
 }
+
+/* ===== ACHIEVEMENTS (BADGES + LEADERBOARD) ===== */
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.badges-card,
+.leaderboard-card {
+  background: #fff;
+  border: 1px solid #eceef1;
+  border-radius: 20px;
+  padding: 22px;
+}
+
+.section-card-title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0a0a0a;
+  margin: 2px 0 16px;
+}
+
+.empty-msg {
+  font-size: 0.85rem;
+  color: #a5a5ad;
+  line-height: 1.5;
+}
+
+/* BADGES */
+.badges-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.badge-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #fafafa;
+}
+
+.badge-pill.locked {
+  opacity: 0.45;
+}
+
+.badge-icon {
+  font-size: 1.3rem;
+  width: 32px;
+  text-align: center;
+}
+
+.badge-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0a0a0a;
+}
+
+.badge-status {
+  font-size: 0.72rem;
+  color: #a5a5ad;
+}
+
+/* LEADERBOARD */
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.leaderboard-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 12px;
+}
+
+.leaderboard-row.is-you {
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+}
+
+.lb-rank {
+  width: 26px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #71717a;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.lb-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5, #16a34a);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.lb-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.lb-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #0a0a0a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lb-you-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #4f46e5;
+  background: #e0e7ff;
+  padding: 1px 6px;
+  border-radius: 999px;
+  margin-left: 4px;
+}
+
+.lb-track {
+  font-size: 0.7rem;
+  color: #a5a5ad;
+}
+
+.lb-streak {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #0a0a0a;
+  flex-shrink: 0;
+}
+
+@media (max-width: 720px) {
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+}
