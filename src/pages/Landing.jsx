@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import HowItWorks from "../components/HowItWorks";
+import Footer from "../components/Footer";
 
 
 const fadeUp = {
@@ -99,6 +100,7 @@ export default function Landing() {
       </section>
       <HowItWorks />
       <Testimonials />
+      <Footer />
     </>
   );
 }
