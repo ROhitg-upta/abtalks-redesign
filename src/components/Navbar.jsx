@@ -165,20 +165,33 @@ export default function Navbar() {
           gap: '32px',
           animation: 'fadeIn 0.2s ease',
         }}>
-          {['Tracks', 'Community', 'Leaderboard'].map(item => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              onClick={() => setMenuOpen(false)}
-              style={{
-                fontSize: '28px',
-                fontWeight: '700',
-                fontFamily: 'var(--font-display)',
-                color: 'var(--primary)',
-                letterSpacing: '-0.02em',
-              }}
-            >{item}</a>
-          ))}
+         {['Tracks', 'Community', 'Leaderboard'].map(item =>
+  item === 'Leaderboard' ? (
+    <span
+      key={item}
+      onClick={() => { navigate('/dashboard'); setMenuOpen(false) }}
+      style={{
+        fontSize: '28px',
+        fontWeight: '500',
+        color: 'var(--secondary)',
+        transition: 'var(--transition)',
+        cursor: 'pointer',
+      }}
+      onMouseEnter={e => e.target.style.color = 'var(--primary)'}
+      onMouseLeave={e => e.target.style.color = 'var(--secondary)'}
+    >{item}</span>
+  ) : (
+    <a key={item} href={`#${item.toLowerCase()}`} style={{
+      fontSize: '14px',
+      fontWeight: '500',
+      color: 'var(--secondary)',
+      transition: 'var(--transition)',
+    }}
+      onMouseEnter={e => e.target.style.color = 'var(--primary)'}
+      onMouseLeave={e => e.target.style.color = 'var(--secondary)'}
+    >{item}</a>
+  )
+)}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '200px', marginTop: '16px' }}>
             <button onClick={() => { navigate('/dashboard'); setMenuOpen(false) }} className="btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
               Start free

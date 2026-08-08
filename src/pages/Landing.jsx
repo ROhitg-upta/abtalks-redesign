@@ -1,9 +1,11 @@
+import Tracks from "../components/Tracks";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import HowItWorks from "../components/HowItWorks";
 import Testimonials from "../components/Testimonials";
 import Footer from "../components/Footer";
+
 
 
 const fadeUp = {
@@ -99,6 +101,7 @@ export default function Landing() {
           </motion.div>
         </div>
       </section>
+      <Tracks />
       <HowItWorks />
       <Testimonials />
       <Footer />

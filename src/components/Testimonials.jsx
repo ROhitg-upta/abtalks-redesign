@@ -32,7 +32,7 @@ const fadeUp = {
 
 export default function Testimonials() {
   return (
-    <section className="testimonials">
+   <section id="community" className="testimonials">
       <motion.div
         className="section-header"
         variants={fadeUp}
