@@ -567,78 +567,23 @@
     }
   ],
   "leaderboard": [
-    {
-      "rank": 1,
-      "name": "Priya Sharma",
-      "avatar": "PS",
-      "streak": 60,
-      "xp": 6000,
-      "track": "AI/ML"
-    },
-    {
-      "rank": 2,
-      "name": "Arjun Mehta",
-      "avatar": "AM",
-      "streak": 58,
-      "xp": 5800,
-      "track": "Web Dev"
-    },
-    {
-      "rank": 3,
-      "name": "Sneha Patel",
-      "avatar": "SP",
-      "streak": 55,
-      "xp": 5500,
-      "track": "DSA"
-    },
-    {
-      "rank": 4,
-      "name": "Karan Singh",
-      "avatar": "KS",
-      "streak": 52,
-      "xp": 5200,
-      "track": "Web Dev"
-    },
-    {
-      "rank": 5,
-      "name": "Anjali Rao",
-      "avatar": "AR",
-      "streak": 50,
-      "xp": 5000,
-      "track": "AI/ML"
-    },
-    {
-      "rank": 6,
-      "name": "Dev Patel",
-      "avatar": "DP",
-      "streak": 48,
-      "xp": 4800,
-      "track": "DSA"
-    },
-    {
-      "rank": 7,
-      "name": "Riya Gupta",
-      "avatar": "RG",
-      "streak": 45,
-      "xp": 4500,
-      "track": "Web Dev"
-    },
-    {
-      "rank": 8,
-      "name": "Rohit Gupta",
-      "avatar": "RG",
-      "streak": 12,
-      "xp": 1150,
-      "track": "Web Dev",
-      "isCurrentUser": true
-    }
+    { "rank": 1, "name": "Priya Sharma", "avatar": "PS", "streak": 60, "xp": 6000, "track": "AI/ML" },
+    { "rank": 2, "name": "Arjun Mehta", "avatar": "AM", "streak": 55, "xp": 5600, "track": "Web Dev" },
+    { "rank": 3, "name": "Sneha Patel", "avatar": "SP", "streak": 51, "xp": 5100, "track": "DSA" },
+    { "rank": 6, "name": "Dev Patel", "avatar": "DP", "streak": 18, "xp": 1820, "track": "DSA" },
+    { "rank": 7, "name": "Riya Gupta", "avatar": "RG", "streak": 14, "xp": 1420, "track": "Web Dev" },
+    { "rank": 8, "name": "Rohit Gupta", "avatar": "RG", "streak": 12, "xp": 1150, "track": "Web Dev", "isCurrentUser": true },
+    { "rank": 9, "name": "Kabir Singh", "avatar": "KS", "streak": 11, "xp": 1080, "track": "AI/ML" },
+    { "rank": 10, "name": "Meera Nair", "avatar": "MN", "streak": 10, "xp": 990, "track": "DSA" },
+    { "rank": 11, "name": "Aditya Rao", "avatar": "AR", "streak": 9, "xp": 910, "track": "Web Dev" }
   ],
+ 
   "tracks": [
     {
       "id": "webdev",
       "title": "Web Development",
       "description": "Master HTML, CSS, JavaScript, React and full-stack development from scratch.",
-      "icon": "🌐",
+      "icon": "webdev",
       "students": 980,
       "days": 60,
       "level": "Beginner to Advanced",
@@ -655,7 +600,7 @@
       "id": "dsa",
       "title": "Data Structures & Algorithms",
       "description": "Crack coding interviews with structured DSA practice and problem solving.",
-      "icon": "🧠",
+      "icon": "dsa",
       "students": 850,
       "days": 60,
       "level": "Intermediate",
@@ -672,7 +617,7 @@
       "id": "aiml",
       "title": "AI & Machine Learning",
       "description": "Build intelligent systems using Python, ML algorithms and modern AI tools.",
-      "icon": "🤖",
+      "icon": "aiml",
       "students": 570,
       "days": 60,
       "level": "Intermediate",

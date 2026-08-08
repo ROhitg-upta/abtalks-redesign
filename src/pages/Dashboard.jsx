@@ -52,45 +52,57 @@ export default function Dashboard() {
           </p>
         </motion.div>
 
+        
+
         <div className="dash-top-grid">
+          {/* STREAK CARD */}
           <motion.div
-            className="streak-card"
+            className="stat-card stat-card--streak"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             custom={1}
           >
-            <div className="streak-card-header">
-              <span className="streak-label">Current Streak</span>
-              <span className="streak-fire">🔥</span>
+            <div className="stat-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2c1 3-2 4.5-2 7.5a3 3 0 0 0 6 0c1.5 1.5 2 3.5 2 5.5a6 6 0 1 1-12 0c0-4 2.5-6 4-8 .5-.7 1.5-2.5 2-5z"
+                  stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" fill="none"/>
+              </svg>
             </div>
-            <div className="streak-number">
+            <span className="stat-card-label">Current Streak</span>
+            <div className="stat-number">
               {student.currentStreak}
-              <span className="streak-unit">days</span>
+              <span className="stat-unit">days</span>
             </div>
             {isNewStudent ? (
-              <p className="streak-empty-msg">
-                No streak yet — submit today's task to light the fire.
+              <p className="stat-empty-msg">
+                No streak yet — submit today's task to begin.
               </p>
             ) : (
-              <p className="streak-sub">
+              <p className="stat-sub">
                 Longest streak: <strong>{student.longestStreak} days</strong>
               </p>
             )}
           </motion.div>
 
+          {/* PROGRESS CARD */}
           <motion.div
-            className="progress-card"
+            className="stat-card stat-card--progress"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             custom={2}
           >
-            <div className="streak-card-header">
-              <span className="streak-label">Overall Progress</span>
-              <span className="progress-percent">
-                {Math.round((student.completedDays / student.totalDays) * 100)}%
-              </span>
+            <div className="stat-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M4 20V10M10 20V4M16 20v-7M22 20V8"
+                  stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+              </svg>
+            </div>
+            <span className="stat-card-label">Overall Progress</span>
+            <div className="stat-number">
+              {Math.round((student.completedDays / student.totalDays) * 100)}
+              <span className="stat-unit">%</span>
             </div>
             <div className="progress-bar-track">
               <motion.div
@@ -102,22 +114,26 @@ export default function Dashboard() {
                 transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
               />
             </div>
-            <p className="streak-sub">
+            <p className="stat-sub">
               {student.completedDays} of {student.totalDays} days completed
             </p>
           </motion.div>
 
+          {/* RANK CARD */}
           <motion.div
-            className="rank-card"
+            className="stat-card stat-card--rank"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             custom={3}
           >
-            <div className="streak-card-header">
-              <span className="streak-label">Your Standing</span>
-              <span className="streak-fire">🏆</span>
+            <div className="stat-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="8" r="5" stroke="currentColor" strokeWidth="1.8" fill="none"/>
+                <path d="M8.5 12.5L7 21l5-2.5L17 21l-1.5-8.5" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" fill="none"/>
+              </svg>
             </div>
+            <span className="stat-card-label">Your Standing</span>
             {student.rank ? (
               <>
                 <div className="rank-display">
@@ -135,7 +151,7 @@ export default function Dashboard() {
                 </div>
               </>
             ) : (
-              <p className="streak-empty-msg">
+              <p className="stat-empty-msg">
                 Complete your first day to enter the leaderboard.
               </p>
             )}
