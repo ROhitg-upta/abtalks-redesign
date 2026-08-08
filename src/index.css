@@ -6,6 +6,8 @@
   padding: 0;
 }
 
+
+
 :root {
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: 'Bricolage Grotesque', sans-serif;
@@ -650,5 +652,317 @@ img {
   }
   .testimonials {
     padding: 56px 18px;
+  }
+}
+
+/* ===== FINAL CTA ===== */
+
+.final-cta {
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.final-cta-inner {
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.final-cta-title {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0a0a0a;
+  margin-bottom: 12px;
+}
+
+.final-cta-subtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 28px;
+}
+
+/* ===== FOOTER ===== */
+
+.footer {
+  border-top: 1px solid #eceef1;
+  padding: 32px 20px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-logo {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: #0a0a0a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.footer-logo-text {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #0a0a0a;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  font-size: 0.85rem;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #0a0a0a;
+}
+
+.footer-copy {
+  font-size: 0.78rem;
+  color: #a5a5ad;
+  width: 100%;
+  text-align: center;
+  margin-top: 8px;
+}
+
+@media (min-width: 640px) {
+  .footer-copy {
+    width: auto;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ===== DASHBOARD LAYOUT ===== */
+
+.dashboard {
+  min-height: 100vh;
+  background: #fafafa;
+}
+
+.dash-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: #fff;
+  border-bottom: 1px solid #eceef1;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.dash-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #0a0a0a;
+  font-size: 0.95rem;
+}
+
+.dash-logo-mark {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: #0a0a0a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.dash-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5, #16a34a);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.dash-main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 28px 18px 60px;
+}
+
+/* GREETING */
+.dash-greeting {
+  margin-bottom: 24px;
+}
+
+.dash-greeting h1 {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0a0a0a;
+  margin-bottom: 6px;
+}
+
+.dash-greeting p {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+/* TOP CARDS GRID */
+.dash-top-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.streak-card,
+.progress-card,
+.rank-card {
+  background: #fff;
+  border: 1px solid #eceef1;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.streak-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.streak-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #71717a;
+}
+
+.streak-fire {
+  font-size: 1.1rem;
+}
+
+.streak-number {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0a0a0a;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.streak-unit {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #a5a5ad;
+}
+
+.streak-sub {
+  font-size: 0.82rem;
+  color: #71717a;
+}
+
+.streak-sub strong {
+  color: #0a0a0a;
+}
+
+.streak-empty-msg {
+  font-size: 0.82rem;
+  color: #a5a5ad;
+  line-height: 1.5;
+}
+
+.progress-percent {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #16a34a;
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: #f0f0f2;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #4f46e5, #16a34a);
+}
+
+/* TODAY'S TASK CARD */
+.today-task-card {
+  background: #0a0a0a;
+  border-radius: 20px;
+  padding: 28px 24px;
+  color: #fff;
+}
+
+.today-task-header {
+  margin-bottom: 10px;
+}
+
+.today-task-header .eyebrow {
+  color: #a5b4fc;
+}
+
+.today-task-title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.today-task-topic {
+  font-size: 0.9rem;
+  color: #d4d4d8;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 720px) {
+  .dash-top-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -748,10 +748,25 @@
       "track": "Web Development"
     }
   ],
-  "stats": {
+ "stats": {
     "totalStudents": 2400,
     "projectsBuilt": 48000,
     "placementsThisYear": 320,
     "averageStreakDays": 28
+  },
+
+  "newStudentExample": {
+    "name": "New Student",
+    "avatar": "NS",
+    "track": "Not Selected",
+    "currentStreak": 0,
+    "longestStreak": 0,
+    "currentDay": 1,
+    "totalDays": 60,
+    "completedDays": 0,
+    "rank": null,
+    "totalStudents": 2400,
+    "xp": 0,
+    "badges": []
   }
 }
