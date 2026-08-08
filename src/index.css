@@ -6,7 +6,33 @@
   padding: 0;
 }
 
-
+/* ===== DARK MODE VARIABLES ===== */
+[data-theme="dark"] {
+  --bg: #0A0A0A;
+  --bg-secondary: #111111;
+  --bg-tertiary: #1A1A1A;
+  --surface: #141414;
+  --surface-hover: #1C1C1C;
+  --primary: #FAFAFA;
+  --primary-light: #E4E4E7;
+  --secondary: #A1A1AA;
+  --muted: #71717A;
+  --subtle: #52525B;
+  --border: #27272A;
+  --border-strong: #3F3F46;
+  --accent: #818CF8;
+  --accent-light: #1E1B4B;
+  --accent-dark: #6366F1;
+  --accent-muted: #312E81;
+  --green: #34D399;
+  --green-light: #022C22;
+  --green-dark: #10B981;
+  --orange: #FB923C;
+  --orange-light: #1C0A00;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.4);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.5);
+}
 
 :root {
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -853,154 +879,244 @@ img {
   margin-bottom: 20px;
 }
 
-/* ===== IMPROVED TOP CARDS (v2) ===== */
+
+/* ===== TOP CARDS - LEETCODE/CODECHEF STYLE ===== */
 
 .streak-card,
 .progress-card,
 .rank-card {
   background: #fff;
   border: 1px solid #eceef1;
-  border-radius: 18px;
-  padding: 22px 20px;
+  border-radius: 20px;
+  padding: 20px 18px 18px;
   position: relative;
   overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .streak-card:hover,
 .progress-card:hover,
 .rank-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.07);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.09);
 }
 
-/* colored top accent bar per card */
+/* Top accent bar */
 .streak-card::before,
 .progress-card::before,
 .rank-card::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: 3px;
+  border-radius: 20px 20px 0 0;
 }
+.streak-card::before  { background: linear-gradient(90deg, #f97316, #f59e0b); }
+.progress-card::before { background: linear-gradient(90deg, #6366f1, #10b981); }
+.rank-card::before    { background: linear-gradient(90deg, #eab308, #f97316); }
 
-.streak-card::before {
-  background: linear-gradient(90deg, #f97316, #f59e0b);
+/* Subtle bg pattern */
+.streak-card::after,
+.rank-card::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.06;
 }
+.streak-card::after { background: #f97316; }
+.rank-card::after   { background: #eab308; }
 
-.progress-card::before {
-  background: linear-gradient(90deg, #4f46e5, #16a34a);
-}
-
-.rank-card::before {
-  background: linear-gradient(90deg, #eab308, #f59e0b);
-}
-
+/* Header row */
 .streak-card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .streak-label {
-  font-size: 0.78rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  color: #71717a;
+  color: #a1a1aa;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.07em;
 }
 
-/* icon badge instead of plain emoji */
+/* Icon badge */
 .streak-fire {
-  font-size: 1rem;
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1rem;
   flex-shrink: 0;
 }
+.streak-card .streak-fire { background: linear-gradient(135deg, #fed7aa, #fdba74); }
+.rank-card   .streak-fire { background: linear-gradient(135deg, #fef08a, #fde047); }
 
-.streak-card .streak-fire {
-  background: linear-gradient(135deg, #fed7aa, #fdba74);
-}
-
-.rank-card .streak-fire {
-  background: linear-gradient(135deg, #fef08a, #fde047);
-}
-
+/* Big number */
 .streak-number {
   font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 2.1rem;
+  font-size: 2.6rem;
   font-weight: 800;
   color: #0a0a0a;
+  line-height: 1;
+  letter-spacing: -0.04em;
   display: flex;
   align-items: baseline;
-  gap: 6px;
-  margin-bottom: 8px;
-  letter-spacing: -0.02em;
+  gap: 5px;
+  margin-bottom: 10px;
 }
 
 .streak-unit {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  color: #a5a5ad;
+  color: #a1a1aa;
+  letter-spacing: 0.02em;
 }
 
+/* Mini flame row below number */
+.streak-flame-row {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 10px;
+}
+.streak-flame-dot {
+  width: 6px;
+  height: 16px;
+  border-radius: 3px;
+  background: #fed7aa;
+  transition: background 0.2s;
+}
+.streak-flame-dot.active {
+  background: linear-gradient(180deg, #f97316, #f59e0b);
+}
+
+/* Sub text */
 .streak-sub {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: #71717a;
+  margin-top: auto;
 }
-
 .streak-sub strong {
   color: #0a0a0a;
   font-weight: 700;
 }
 
+/* Empty state */
 .streak-empty-msg {
-  font-size: 0.8rem;
-  color: #a5a5ad;
+  font-size: 0.78rem;
+  color: #a1a1aa;
   line-height: 1.5;
   padding: 8px 10px;
   background: #fafafa;
   border-radius: 8px;
   border: 1px dashed #e4e4e7;
+  margin-top: auto;
 }
 
-/* progress card specific */
+/* Progress card */
 .progress-percent {
   font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 1.4rem;
+  font-size: 2.2rem;
   font-weight: 800;
-  color: #16a34a;
+  color: #10b981;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: 14px;
 }
 
+/* Segmented progress bar */
+.progress-bar-segmented {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3px;
+  margin-bottom: 12px;
+}
+.progress-seg {
+  height: 6px;
+  border-radius: 3px;
+  background: #f0f0f2;
+  transition: background 0.3s ease;
+}
+.progress-seg.filled {
+  background: linear-gradient(90deg, #6366f1, #10b981);
+}
+
+/* Old bar (keep for fallback) */
 .progress-bar-track {
   width: 100%;
-  height: 10px;
+  height: 8px;
   border-radius: 999px;
   background: #f0f0f2;
   overflow: hidden;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.04);
 }
-
 .progress-bar-fill {
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, #4f46e5, #16a34a);
-  box-shadow: 0 0 8px rgba(79, 70, 229, 0.35);
+  background: linear-gradient(90deg, #6366f1, #10b981);
+  box-shadow: 0 0 8px rgba(99,102,241,0.3);
+}
+
+/* Rank card number */
+.rank-number-display {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #0a0a0a;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+.rank-hash {
+  font-size: 1.4rem;
+  color: #eab308;
+  font-weight: 800;
+}
+.rank-of {
+  font-size: 0.72rem;
+  color: #a1a1aa;
+  font-weight: 600;
+}
+
+/* XP pill */
+.xp-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: linear-gradient(135deg, #fef9c3, #fef08a);
+  border: 1px solid #fde047;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #854d0e;
+  margin-top: auto;
+  width: fit-content;
 }
 
 @media (max-width: 720px) {
   .dash-top-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
   }
+  .streak-number { font-size: 2.2rem; }
+  .progress-percent { font-size: 1.8rem; }
 }
 
 /* TODAY'S TASK CARD */

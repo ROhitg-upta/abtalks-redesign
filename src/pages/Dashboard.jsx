@@ -113,15 +113,14 @@ export default function Dashboard() {
               <span className="streak-fire">🏆</span>
             </div>
             {student.rank ? (
-              <>
-                <div className="streak-number">
-                  #{student.rank}
-                  <span className="streak-unit">
-                    of {student.totalStudents.toLocaleString()}
-                  </span>
-                </div>
-                <p className="streak-sub">{student.xp.toLocaleString()} XP earned</p>
-              </>
+  <>
+    <div className="rank-number-display">
+      <span className="rank-hash">#</span>
+      {student.rank}
+      <span className="rank-of">of {student.totalStudents.toLocaleString()}</span>
+    </div>
+    <div className="xp-pill">⚡ {student.xp.toLocaleString()} XP</div>
+  </>
             ) : (
               <p className="streak-empty-msg">
                 Complete your first day to enter the leaderboard.

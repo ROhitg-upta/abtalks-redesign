@@ -16,49 +16,13 @@
     "totalStudents": 2400,
     "xp": 1150,
     "badges": [
-      {
-        "id": 1,
-        "title": "First Submit",
-        "icon": "🚀",
-        "earned": true,
-        "day": 1
-      },
-      {
-        "id": 2,
-        "title": "7-Day Streak",
-        "icon": "🔥",
-        "earned": true,
-        "day": 7
-      },
-      {
-        "id": 3,
-        "title": "Top 10",
-        "icon": "🏆",
-        "earned": true,
-        "day": 10
-      },
-      {
-        "id": 4,
-        "title": "30-Day Streak",
-        "icon": "💎",
-        "earned": false,
-        "day": 30
-      },
-      {
-        "id": 5,
-        "title": "Halfway There",
-        "icon": "⚡",
-        "earned": false,
-        "day": 30
-      },
-      {
-        "id": 6,
-        "title": "60-Day Legend",
-        "icon": "👑",
-        "earned": false,
-        "day": 60
-      }
-    ]
+  { "id": 1, "title": "1★ Coder", "icon": "1★", "earned": true, "day": 1, "type": "rank", "desc": "Completed first submission" },
+  { "id": 2, "title": "2★ Coder", "icon": "2★", "earned": true, "day": 7, "type": "rank", "desc": "7-day streak achieved" },
+  { "id": 3, "title": "3★ Coder", "icon": "3★", "earned": true, "day": 12, "type": "rank", "desc": "12 days consistent" },
+  { "id": 4, "title": "4★ Coder", "icon": "4★", "earned": false, "day": 20, "type": "rank", "desc": "Reach Day 20" },
+  { "id": 5, "title": "5★ Coder", "icon": "5★", "earned": false, "day": 30, "type": "rank", "desc": "30-day streak" },
+  { "id": 6, "title": "6★ Legend", "icon": "6★", "earned": false, "day": 60, "type": "rank", "desc": "Complete all 60 days" }
+]
   },
   "days": [
     {
