@@ -1,3 +1,4 @@
+import CountdownTimer from "../components/CountdownTimer";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import data from "../data/data.json";
@@ -51,6 +52,17 @@ export default function Dashboard() {
               : `Day ${student.currentDay} of ${student.totalDays} — keep the streak alive.`}
           </p>
         </motion.div>
+
+         <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0.5}
+        >
+          <CountdownTimer />
+        </motion.div>
+
+        
 
         
 
@@ -191,6 +203,7 @@ export default function Dashboard() {
 
         <StreakHeatmap />
         <AchievementsSection />
+        <CountdownTimer />
       </main>
     </div>
   );
