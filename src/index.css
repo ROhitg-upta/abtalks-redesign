@@ -1460,3 +1460,97 @@ img {
   text-decoration: underline;
   cursor: pointer;
 }
+
+/* ===== TRACKS SECTION ===== */
+
+.tracks-section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  scroll-margin-top: 80px;
+}
+
+.tracks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.track-card {
+  padding: 26px 22px;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid #eceef1;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.track-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.06);
+}
+
+.track-icon {
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+}
+
+.track-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0a0a0a;
+  margin-bottom: 8px;
+}
+
+.track-desc {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+.track-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.track-topic-chip {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #4338ca;
+  background: #eef2ff;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.track-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid #f0f0f2;
+  margin-top: auto;
+}
+
+.track-level {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #71717a;
+}
+
+.track-students {
+  font-size: 0.72rem;
+  color: #a5a5ad;
+}
+
+@media (max-width: 720px) {
+  .tracks-grid {
+    grid-template-columns: 1fr;
+  }
+  .tracks-section {
+    padding: 56px 18px;
+  }
+}
