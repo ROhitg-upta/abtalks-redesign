@@ -853,83 +853,154 @@ img {
   margin-bottom: 20px;
 }
 
+/* ===== IMPROVED TOP CARDS (v2) ===== */
+
 .streak-card,
 .progress-card,
 .rank-card {
   background: #fff;
   border: 1px solid #eceef1;
-  border-radius: 16px;
-  padding: 20px;
+  border-radius: 18px;
+  padding: 22px 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.streak-card:hover,
+.progress-card:hover,
+.rank-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.07);
+}
+
+/* colored top accent bar per card */
+.streak-card::before,
+.progress-card::before,
+.rank-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.streak-card::before {
+  background: linear-gradient(90deg, #f97316, #f59e0b);
+}
+
+.progress-card::before {
+  background: linear-gradient(90deg, #4f46e5, #16a34a);
+}
+
+.rank-card::before {
+  background: linear-gradient(90deg, #eab308, #f59e0b);
 }
 
 .streak-card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .streak-label {
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.78rem;
+  font-weight: 700;
   color: #71717a;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
+/* icon badge instead of plain emoji */
 .streak-fire {
-  font-size: 1.1rem;
+  font-size: 1rem;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.streak-card .streak-fire {
+  background: linear-gradient(135deg, #fed7aa, #fdba74);
+}
+
+.rank-card .streak-fire {
+  background: linear-gradient(135deg, #fef08a, #fde047);
 }
 
 .streak-number {
   font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 2.1rem;
+  font-weight: 800;
   color: #0a0a0a;
   display: flex;
   align-items: baseline;
   gap: 6px;
   margin-bottom: 8px;
+  letter-spacing: -0.02em;
 }
 
 .streak-unit {
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 0.78rem;
+  font-weight: 600;
   color: #a5a5ad;
 }
 
 .streak-sub {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: #71717a;
 }
 
 .streak-sub strong {
   color: #0a0a0a;
+  font-weight: 700;
 }
 
 .streak-empty-msg {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: #a5a5ad;
   line-height: 1.5;
+  padding: 8px 10px;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px dashed #e4e4e7;
 }
 
+/* progress card specific */
 .progress-percent {
-  font-size: 1rem;
-  font-weight: 700;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
   color: #16a34a;
 }
 
 .progress-bar-track {
   width: 100%;
-  height: 8px;
+  height: 10px;
   border-radius: 999px;
   background: #f0f0f2;
   overflow: hidden;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.04);
 }
 
 .progress-bar-fill {
   height: 100%;
   border-radius: 999px;
   background: linear-gradient(90deg, #4f46e5, #16a34a);
+  box-shadow: 0 0 8px rgba(79, 70, 229, 0.35);
+}
+
+@media (max-width: 720px) {
+  .dash-top-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 }
 
 /* TODAY'S TASK CARD */
