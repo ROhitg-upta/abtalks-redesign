@@ -1,0 +1,757 @@
+{
+  "student": {
+    "name": "Rohit Gupta",
+    "username": "rohit_dev",
+    "avatar": "RG",
+    "track": "Web Development",
+    "currentStreak": 12,
+    "longestStreak": 15,
+    "currentDay": 12,
+    "totalDays": 60,
+    "completedDays": 11,
+    "joinedDate": "2026-07-01",
+    "linkedIn": "https://linkedin.com/in/rohitgupta",
+    "github": "https://github.com/rohitgupta",
+    "rank": 8,
+    "totalStudents": 2400,
+    "xp": 1150,
+    "badges": [
+      {
+        "id": 1,
+        "title": "First Submit",
+        "icon": "🚀",
+        "earned": true,
+        "day": 1
+      },
+      {
+        "id": 2,
+        "title": "7-Day Streak",
+        "icon": "🔥",
+        "earned": true,
+        "day": 7
+      },
+      {
+        "id": 3,
+        "title": "Top 10",
+        "icon": "🏆",
+        "earned": true,
+        "day": 10
+      },
+      {
+        "id": 4,
+        "title": "30-Day Streak",
+        "icon": "💎",
+        "earned": false,
+        "day": 30
+      },
+      {
+        "id": 5,
+        "title": "Halfway There",
+        "icon": "⚡",
+        "earned": false,
+        "day": 30
+      },
+      {
+        "id": 6,
+        "title": "60-Day Legend",
+        "icon": "👑",
+        "earned": false,
+        "day": 60
+      }
+    ]
+  },
+  "days": [
+    {
+      "day": 1,
+      "title": "HTML Foundations",
+      "topic": "Semantic HTML structure",
+      "status": "completed",
+      "githubUrl": "https://github.com/rohit/day1",
+      "linkedInUrl": "https://linkedin.com/posts/day1",
+      "submittedAt": "2026-07-01T21:30:00Z"
+    },
+    {
+      "day": 2,
+      "title": "CSS Mastery",
+      "topic": "Flexbox and Grid layouts",
+      "status": "completed",
+      "githubUrl": "https://github.com/rohit/day2",
+      "linkedInUrl": "https://linkedin.com/posts/day2",
+      "submittedAt": "2026-07-02T22:00:00Z"
+    },
+    {
+      "day": 3,
+      "title": "JavaScript Basics",
+      "topic": "Variables, functions, loops",
+      "status": "completed",
+      "githubUrl": "https://github.com/rohit/day3",
+      "linkedInUrl": "https://linkedin.com/posts/day3",
+      "submittedAt": "2026-07-03T20:45:00Z"
+    },
+    {
+      "day": 4,
+      "title": "DOM Manipulation",
+      "topic": "querySelector, events, classList",
+      "status": "completed",
+      "githubUrl": "https://github.com/rohit/day4",
+      "linkedInUrl": "https://linkedin.com/posts/day4",
+      "submittedAt": "2026-07-04T21:15:00Z"
+    },
+    {
+      "day": 5,
+      "title": "ES6+ Features",
+      "topic": "Arrow functions, destructuring, spread",
+      "status": "completed",
+      "githubUrl": "https://github.com/rohit/day5",
+      "linkedInUrl": "https://linkedin.com/posts/day5",
+      "submittedAt": "2026-07-05T23:00:00Z"
+    },
+    {
+      "day": 6,
+      "title": "Fetch API",
+      "topic": "Promises, async/await, REST APIs",
+      "status": "completed",
+      "githubUrl": "https://github.com/rohit/day6",
+      "linkedInUrl": "https://linkedin.com/posts/day6",
+      "submittedAt": "2026-07-06T21:30:00Z"
+    },
+    {
+      "day": 7,
+      "title": "React Intro",
+      "topic": "Components, JSX, props",
+      "status": "completed",
+      "githubUrl": "https://github.com/rohit/day7",
+      "linkedInUrl": "https://linkedin.com/posts/day7",
+      "submittedAt": "2026-07-07T22:30:00Z"
+    },
+    {
+      "day": 8,
+      "title": "React Hooks",
+      "topic": "useState, useEffect, custom hooks",
+      "status": "completed",
+      "githubUrl": "https://github.com/rohit/day8",
+      "linkedInUrl": "https://linkedin.com/posts/day8",
+      "submittedAt": "2026-07-08T20:00:00Z"
+    },
+    {
+      "day": 9,
+      "title": "React Router",
+      "topic": "Navigation, dynamic routes, params",
+      "status": "completed",
+      "githubUrl": "https://github.com/rohit/day9",
+      "linkedInUrl": "https://linkedin.com/posts/day9",
+      "submittedAt": "2026-07-09T21:45:00Z"
+    },
+    {
+      "day": 10,
+      "title": "State Management",
+      "topic": "Context API, useReducer",
+      "status": "completed",
+      "githubUrl": "https://github.com/rohit/day10",
+      "linkedInUrl": "https://linkedin.com/posts/day10",
+      "submittedAt": "2026-07-10T22:15:00Z"
+    },
+    {
+      "day": 11,
+      "title": "Tailwind CSS",
+      "topic": "Utility-first styling, responsive design",
+      "status": "completed",
+      "githubUrl": "https://github.com/rohit/day11",
+      "linkedInUrl": "https://linkedin.com/posts/day11",
+      "submittedAt": "2026-07-11T21:00:00Z"
+    },
+    {
+      "day": 12,
+      "title": "Responsive Navbar",
+      "topic": "Mobile-first navigation with hamburger menu",
+      "status": "pending",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 13,
+      "title": "Forms & Validation",
+      "topic": "Controlled inputs, error handling",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 14,
+      "title": "Authentication UI",
+      "topic": "Login, signup, protected routes",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 15,
+      "title": "API Integration",
+      "topic": "Real-world REST API with loading states",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 16,
+      "title": "Dashboard UI",
+      "topic": "Analytics cards, charts, data tables",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 17,
+      "title": "Animation Basics",
+      "topic": "CSS transitions, Framer Motion intro",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 18,
+      "title": "File Uploads",
+      "topic": "Drag & drop, preview, progress",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 19,
+      "title": "Search & Filter",
+      "topic": "Debounce, filter logic, highlight",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 20,
+      "title": "Dark Mode",
+      "topic": "Theme toggle, CSS variables, persistence",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 21,
+      "title": "Performance",
+      "topic": "Lazy loading, code splitting, memoization",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 22,
+      "title": "Testing Basics",
+      "topic": "Jest, React Testing Library",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 23,
+      "title": "TypeScript Intro",
+      "topic": "Types, interfaces, generics",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 24,
+      "title": "Next.js Basics",
+      "topic": "SSR, SSG, file-based routing",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 25,
+      "title": "Database Basics",
+      "topic": "SQL vs NoSQL, CRUD operations",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 26,
+      "title": "Node.js Intro",
+      "topic": "Express server, REST API creation",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 27,
+      "title": "MongoDB",
+      "topic": "Mongoose, schemas, queries",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 28,
+      "title": "JWT Auth",
+      "topic": "Tokens, middleware, protected routes",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 29,
+      "title": "Full Stack App",
+      "topic": "Connect frontend + backend + database",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 30,
+      "title": "Deployment",
+      "topic": "Vercel, Railway, environment variables",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 31,
+      "title": "WebSockets",
+      "topic": "Real-time chat with Socket.io",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 32,
+      "title": "Redis Caching",
+      "topic": "Cache strategies, TTL, invalidation",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 33,
+      "title": "GraphQL",
+      "topic": "Queries, mutations, Apollo client",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 34,
+      "title": "Docker Basics",
+      "topic": "Containers, images, docker-compose",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 35,
+      "title": "CI/CD Pipeline",
+      "topic": "GitHub Actions, automated deployment",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 36,
+      "title": "AWS Intro",
+      "topic": "S3, EC2, Lambda basics",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 37,
+      "title": "Security Basics",
+      "topic": "CORS, XSS, CSRF, helmet.js",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 38,
+      "title": "System Design",
+      "topic": "Scalability, load balancing, CDN",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 39,
+      "title": "Microservices",
+      "topic": "Architecture patterns, API gateway",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 40,
+      "title": "AI Integration",
+      "topic": "OpenAI API, prompt engineering basics",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 41,
+      "title": "PWA",
+      "topic": "Service workers, offline support, manifest",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 42,
+      "title": "Web3 Basics",
+      "topic": "Blockchain, smart contracts, ethers.js",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 43,
+      "title": "React Native Intro",
+      "topic": "Mobile development with React Native",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 44,
+      "title": "UI Component Library",
+      "topic": "Build your own design system",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 45,
+      "title": "Data Visualization",
+      "topic": "Charts with Recharts and D3.js",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 46,
+      "title": "Accessibility",
+      "topic": "ARIA, keyboard nav, screen readers",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 47,
+      "title": "SEO Optimization",
+      "topic": "Meta tags, sitemap, structured data",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 48,
+      "title": "Monitoring",
+      "topic": "Error tracking, analytics, logging",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 49,
+      "title": "Open Source",
+      "topic": "Contributing to OSS, PR workflow",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 50,
+      "title": "Portfolio Project",
+      "topic": "Plan and start your capstone project",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 51,
+      "title": "Capstone Day 2",
+      "topic": "Backend API development",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 52,
+      "title": "Capstone Day 3",
+      "topic": "Frontend integration",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 53,
+      "title": "Capstone Day 4",
+      "topic": "Authentication and authorization",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 54,
+      "title": "Capstone Day 5",
+      "topic": "Testing and bug fixes",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 55,
+      "title": "Capstone Day 6",
+      "topic": "Performance optimization",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 56,
+      "title": "Capstone Day 7",
+      "topic": "UI polish and animations",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 57,
+      "title": "Capstone Day 8",
+      "topic": "Deployment and DevOps",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 58,
+      "title": "Capstone Day 9",
+      "topic": "Documentation and README",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 59,
+      "title": "Capstone Day 10",
+      "topic": "Final review and presentation prep",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    },
+    {
+      "day": 60,
+      "title": "Demo Day",
+      "topic": "Present your project to the community",
+      "status": "upcoming",
+      "githubUrl": "",
+      "linkedInUrl": "",
+      "submittedAt": null
+    }
+  ],
+  "leaderboard": [
+    {
+      "rank": 1,
+      "name": "Priya Sharma",
+      "avatar": "PS",
+      "streak": 60,
+      "xp": 6000,
+      "track": "AI/ML"
+    },
+    {
+      "rank": 2,
+      "name": "Arjun Mehta",
+      "avatar": "AM",
+      "streak": 58,
+      "xp": 5800,
+      "track": "Web Dev"
+    },
+    {
+      "rank": 3,
+      "name": "Sneha Patel",
+      "avatar": "SP",
+      "streak": 55,
+      "xp": 5500,
+      "track": "DSA"
+    },
+    {
+      "rank": 4,
+      "name": "Karan Singh",
+      "avatar": "KS",
+      "streak": 52,
+      "xp": 5200,
+      "track": "Web Dev"
+    },
+    {
+      "rank": 5,
+      "name": "Anjali Rao",
+      "avatar": "AR",
+      "streak": 50,
+      "xp": 5000,
+      "track": "AI/ML"
+    },
+    {
+      "rank": 6,
+      "name": "Dev Patel",
+      "avatar": "DP",
+      "streak": 48,
+      "xp": 4800,
+      "track": "DSA"
+    },
+    {
+      "rank": 7,
+      "name": "Riya Gupta",
+      "avatar": "RG",
+      "streak": 45,
+      "xp": 4500,
+      "track": "Web Dev"
+    },
+    {
+      "rank": 8,
+      "name": "Rohit Gupta",
+      "avatar": "RG",
+      "streak": 12,
+      "xp": 1150,
+      "track": "Web Dev",
+      "isCurrentUser": true
+    }
+  ],
+  "tracks": [
+    {
+      "id": "webdev",
+      "title": "Web Development",
+      "description": "Master HTML, CSS, JavaScript, React and full-stack development from scratch.",
+      "icon": "🌐",
+      "students": 980,
+      "days": 60,
+      "level": "Beginner to Advanced",
+      "topics": [
+        "HTML & CSS",
+        "JavaScript",
+        "React",
+        "Node.js",
+        "Databases",
+        "Deployment"
+      ]
+    },
+    {
+      "id": "dsa",
+      "title": "Data Structures & Algorithms",
+      "description": "Crack coding interviews with structured DSA practice and problem solving.",
+      "icon": "🧠",
+      "students": 850,
+      "days": 60,
+      "level": "Intermediate",
+      "topics": [
+        "Arrays",
+        "Linked Lists",
+        "Trees",
+        "Graphs",
+        "Dynamic Programming",
+        "System Design"
+      ]
+    },
+    {
+      "id": "aiml",
+      "title": "AI & Machine Learning",
+      "description": "Build intelligent systems using Python, ML algorithms and modern AI tools.",
+      "icon": "🤖",
+      "students": 570,
+      "days": 60,
+      "level": "Intermediate",
+      "topics": [
+        "Python",
+        "NumPy & Pandas",
+        "Scikit-learn",
+        "Neural Networks",
+        "LLMs",
+        "AI Deployment"
+      ]
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Priya Sharma",
+      "avatar": "PS",
+      "role": "SDE Intern @ Google",
+      "text": "ABTalks ka 60-day challenge meri zindagi badal di. Consistent building ki aadat se mujhe Google internship mili.",
+      "streak": 60,
+      "track": "Web Development"
+    },
+    {
+      "name": "Arjun Mehta",
+      "avatar": "AM",
+      "role": "Placed @ Microsoft",
+      "text": "Daily commits aur LinkedIn posts ne meri visibility 10x kar di. 3 recruiters ne directly reach out kiya.",
+      "streak": 58,
+      "track": "DSA"
+    },
+    {
+      "name": "Sneha Patel",
+      "avatar": "SP",
+      "role": "Freelancer — ₹80k/month",
+      "text": "60 projects in 60 days — mera portfolio itna strong ho gaya ki clients khud aane lage.",
+      "streak": 55,
+      "track": "Web Development"
+    }
+  ],
+  "stats": {
+    "totalStudents": 2400,
+    "projectsBuilt": 48000,
+    "placementsThisYear": 320,
+    "averageStreakDays": 28
+  }
+}
