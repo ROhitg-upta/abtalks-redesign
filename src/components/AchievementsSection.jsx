@@ -10,12 +10,12 @@ const fadeUp = {
 };
 
 const STAR_COLORS = {
-  "1★": { stars: 1, color: "#71717A", bg: "#F4F4F5", glow: "rgba(113,113,122,0.2)" },
-  "2★": { stars: 2, color: "#16A34A", bg: "#DCFCE7", glow: "rgba(22,163,74,0.2)" },
-  "3★": { stars: 3, color: "#2563EB", bg: "#DBEAFE", glow: "rgba(37,99,235,0.2)" },
-  "4★": { stars: 4, color: "#7C3AED", bg: "#EDE9FE", glow: "rgba(124,58,237,0.2)" },
-  "5★": { stars: 5, color: "#EA580C", bg: "#FFEDD5", glow: "rgba(234,88,12,0.2)" },
-  "6★": { stars: 6, color: "#CA8A04", bg: "#FEF9C3", glow: "rgba(202,138,4,0.25)" },
+  "1★": { stars: 1, color: "#71717A", bg: "var(--bg-secondary)",    glow: "rgba(113,113,122,0.2)" },
+  "2★": { stars: 2, color: "#16A34A", bg: "var(--green-light)",     glow: "rgba(22,163,74,0.2)"   },
+  "3★": { stars: 3, color: "#2563EB", bg: "#DBEAFE",                glow: "rgba(37,99,235,0.2)"   },
+  "4★": { stars: 4, color: "#7C3AED", bg: "#EDE9FE",                glow: "rgba(124,58,237,0.2)"  },
+  "5★": { stars: 5, color: "#EA580C", bg: "var(--orange-light)",    glow: "rgba(234,88,12,0.2)"   },
+  "6★": { stars: 6, color: "#CA8A04", bg: "#FEF9C3",                glow: "rgba(202,138,4,0.25)"  },
 };
 
 const RANK_COLORS = [
@@ -31,7 +31,7 @@ function StarRow({ count, color, size = 10 }) {
         <svg key={i} width={size} height={size} viewBox="0 0 12 12">
           <polygon
             points="6,1 7.5,4.5 11,4.8 8.5,7 9.3,10.5 6,8.5 2.7,10.5 3.5,7 1,4.8 4.5,4.5"
-            fill={i < count ? color : "#E4E4E7"}
+            fill={i < count ? color : "var(--border-strong)"}
           />
         </svg>
       ))}
@@ -56,8 +56,8 @@ export default function AchievementsSection() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         style={{
-          background: "#fff",
-          border: "1px solid #ECEEF1",
+          background: "var(--surface)",
+          border: "1px solid var(--border)",
           borderRadius: "20px",
           padding: "22px 20px",
         }}
@@ -65,10 +65,10 @@ export default function AchievementsSection() {
         {/* Header */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "20px" }}>
           <div>
-            <p style={{ fontSize: "0.68rem", fontWeight: 700, color: "#A1A1AA", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "3px" }}>
+            <p style={{ fontSize: "0.68rem", fontWeight: 700, color: "var(--subtle)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "3px" }}>
               Achievements
             </p>
-            <h2 style={{ fontSize: "1rem", fontWeight: 700, color: "#0A0A0A", fontFamily: "Bricolage Grotesque, sans-serif", letterSpacing: "-0.02em" }}>
+            <h2 style={{ fontSize: "1rem", fontWeight: 700, color: "var(--primary)", fontFamily: "Bricolage Grotesque, sans-serif", letterSpacing: "-0.02em" }}>
               Coder Rating
             </h2>
           </div>
@@ -110,10 +110,10 @@ export default function AchievementsSection() {
                   gap: "12px",
                   padding: "12px 14px",
                   borderRadius: "14px",
-                  background: badge.earned ? style.bg : "#FAFAFA",
+                  background: badge.earned ? style.bg : "var(--bg-secondary)",
                   border: badge.earned
                     ? `1.5px solid ${style.color}22`
-                    : "1px solid #F0F0F2",
+                    : "1px solid var(--bg-tertiary)",
                   opacity: badge.earned ? 1 : 0.5,
                   position: "relative",
                   overflow: "hidden",
@@ -135,8 +135,8 @@ export default function AchievementsSection() {
                 <div style={{
                   width: "44px", height: "44px",
                   borderRadius: "12px",
-                  background: badge.earned ? "#fff" : "#F0F0F2",
-                  border: badge.earned ? `1.5px solid ${style.color}33` : "1.5px solid #E4E4E7",
+                  background: badge.earned ? "var(--surface)" : "var(--bg-tertiary)",
+                  border: badge.earned ? `1.5px solid ${style.color}33` : "1.5px solid var(--border)",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
@@ -148,7 +148,7 @@ export default function AchievementsSection() {
                   <span style={{
                     fontSize: "0.95rem",
                     fontWeight: 800,
-                    color: badge.earned ? style.color : "#A1A1AA",
+                    color: badge.earned ? style.color : "var(--subtle)",
                     fontFamily: "Bricolage Grotesque, sans-serif",
                     lineHeight: 1,
                   }}>
@@ -159,7 +159,7 @@ export default function AchievementsSection() {
                       <polygon
                         key={idx}
                         points={`${idx * 10 + 5},1 ${idx * 10 + 6.5},4 ${idx * 10 + 9},4.2 ${idx * 10 + 7},6 ${idx * 10 + 7.8},9 ${idx * 10 + 5},7.5 ${idx * 10 + 2.2},9 ${idx * 10 + 3},6 ${idx * 10 + 1},4.2 ${idx * 10 + 3.5},4`}
-                        fill={idx < style.stars ? (badge.earned ? style.color : "#A1A1AA") : "#E4E4E7"}
+                        fill={idx < style.stars ? (badge.earned ? style.color : "var(--subtle)") : "var(--border-strong)"}
                       />
                     ))}
                   </svg>
@@ -170,12 +170,12 @@ export default function AchievementsSection() {
                   <p style={{
                     fontSize: "0.85rem",
                     fontWeight: 700,
-                    color: badge.earned ? "#0A0A0A" : "#71717A",
+                    color: badge.earned ? "var(--primary)" : "var(--muted)",
                     marginBottom: "2px",
                   }}>
                     {badge.title}
                   </p>
-                  <p style={{ fontSize: "0.72rem", color: "#A1A1AA" }}>
+                  <p style={{ fontSize: "0.72rem", color: "var(--subtle)" }}>
                     {badge.desc}
                   </p>
                 </div>
@@ -186,21 +186,21 @@ export default function AchievementsSection() {
                     display: "flex",
                     alignItems: "center",
                     gap: "4px",
-                    background: "#DCFCE7",
-                    border: "1px solid #86EFAC",
+                    background: "var(--green-light)",
+                    border: "1px solid var(--green-dark)",
                     borderRadius: "999px",
                     padding: "3px 8px",
                     flexShrink: 0,
                   }}>
-                    <span style={{ fontSize: "8px", color: "#16A34A" }}>✓</span>
-                    <span style={{ fontSize: "0.65rem", fontWeight: 700, color: "#16A34A" }}>Earned</span>
+                    <span style={{ fontSize: "8px", color: "var(--green)" }}>✓</span>
+                    <span style={{ fontSize: "0.65rem", fontWeight: 700, color: "var(--green)" }}>Earned</span>
                   </div>
                 ) : (
                   <div style={{
                     fontSize: "0.65rem",
                     fontWeight: 600,
-                    color: "#A1A1AA",
-                    background: "#F0F0F2",
+                    color: "var(--subtle)",
+                    background: "var(--bg-tertiary)",
                     padding: "3px 8px",
                     borderRadius: "999px",
                     flexShrink: 0,
@@ -218,19 +218,19 @@ export default function AchievementsSection() {
           <div style={{
             marginTop: "16px",
             padding: "12px 14px",
-            background: "#FAFAFA",
+            background: "var(--bg-secondary)",
             borderRadius: "12px",
-            border: "1px solid #F0F0F2",
+            border: "1px solid var(--bg-tertiary)",
           }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
-              <span style={{ fontSize: "0.72rem", fontWeight: 600, color: "#71717A" }}>
+              <span style={{ fontSize: "0.72rem", fontWeight: 600, color: "var(--muted)" }}>
                 Next: {locked[0].title}
               </span>
-              <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "#0A0A0A" }}>
+              <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "var(--primary)" }}>
                 Day {student.currentDay}/{locked[0].day}
               </span>
             </div>
-            <div style={{ height: "5px", background: "#E4E4E7", borderRadius: "999px", overflow: "hidden" }}>
+            <div style={{ height: "5px", background: "var(--border)", borderRadius: "999px", overflow: "hidden" }}>
               <motion.div
                 initial={{ width: 0 }}
                 whileInView={{ width: `${Math.min((student.currentDay / locked[0].day) * 100, 100)}%` }}
@@ -238,7 +238,7 @@ export default function AchievementsSection() {
                 transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
                 style={{
                   height: "100%",
-                  background: `linear-gradient(90deg, ${STAR_COLORS[locked[0].icon]?.color || "#6366F1"}, #6366F1)`,
+                  background: `linear-gradient(90deg, ${STAR_COLORS[locked[0].icon]?.color || "var(--accent)"}, var(--accent))`,
                   borderRadius: "999px",
                 }}
               />
@@ -254,8 +254,8 @@ export default function AchievementsSection() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
         style={{
-          background: "#fff",
-          border: "1px solid #ECEEF1",
+          background: "var(--surface)",
+          border: "1px solid var(--border)",
           borderRadius: "20px",
           padding: "22px 20px",
         }}
@@ -263,20 +263,20 @@ export default function AchievementsSection() {
         {/* Header */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "18px" }}>
           <div>
-            <p style={{ fontSize: "0.68rem", fontWeight: 700, color: "#A1A1AA", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "3px" }}>
+            <p style={{ fontSize: "0.68rem", fontWeight: 700, color: "var(--subtle)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "3px" }}>
               Standing
             </p>
-            <h2 style={{ fontSize: "1rem", fontWeight: 700, color: "#0A0A0A", fontFamily: "Bricolage Grotesque, sans-serif", letterSpacing: "-0.02em" }}>
+            <h2 style={{ fontSize: "1rem", fontWeight: 700, color: "var(--primary)", fontFamily: "Bricolage Grotesque, sans-serif", letterSpacing: "-0.02em" }}>
               Leaderboard
             </h2>
           </div>
           <div style={{
-            background: "#EEF2FF",
+            background: "var(--accent-light)",
             borderRadius: "999px",
             padding: "4px 12px",
             fontSize: "0.72rem",
             fontWeight: 700,
-            color: "#4F46E5",
+            color: "var(--accent-dark)",
           }}>
             #{student.rank} of {student.totalStudents.toLocaleString()}
           </div>
@@ -298,8 +298,8 @@ export default function AchievementsSection() {
                 alignItems: "center",
                 padding: "14px 8px 12px",
                 borderRadius: "14px",
-                background: entry.isCurrentUser ? "#EEF2FF" : "#FAFAFA",
-                border: entry.isCurrentUser ? "1.5px solid #C7D2FE" : "1px solid #F0F0F2",
+                background: entry.isCurrentUser ? "var(--accent-light)" : "var(--bg-secondary)",
+                border: entry.isCurrentUser ? "1.5px solid var(--accent-muted)" : "1px solid var(--bg-tertiary)",
                 gap: "6px",
                 position: "relative",
               }}
@@ -323,21 +323,21 @@ export default function AchievementsSection() {
                 marginTop: "6px",
               }}>{entry.avatar}</div>
 
-              <p style={{ fontSize: "0.7rem", fontWeight: 700, color: "#0A0A0A", textAlign: "center", lineHeight: 1.2 }}>
+              <p style={{ fontSize: "0.7rem", fontWeight: 700, color: "var(--primary)", textAlign: "center", lineHeight: 1.2 }}>
                 {entry.name.split(" ")[0]}
               </p>
               <div style={{
                 display: "flex", alignItems: "center", gap: "3px",
-                background: "#FFF7ED", padding: "2px 7px", borderRadius: "999px",
+                background: "var(--orange-light)", padding: "2px 7px", borderRadius: "999px",
               }}>
                 <span style={{ fontSize: "10px" }}>🔥</span>
-                <span style={{ fontSize: "0.68rem", fontWeight: 700, color: "#EA580C" }}>{entry.streak}</span>
+                <span style={{ fontSize: "0.68rem", fontWeight: 700, color: "var(--orange)" }}>{entry.streak}</span>
               </div>
             </motion.div>
           ))}
         </div>
 
-        <div style={{ borderTop: "1px solid #F4F4F5", marginBottom: "12px" }} />
+        <div style={{ borderTop: "1px solid var(--border)", marginBottom: "12px" }} />
 
         {/* Rest */}
         <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
@@ -352,45 +352,45 @@ export default function AchievementsSection() {
               style={{
                 display: "flex", alignItems: "center", gap: "10px",
                 padding: "9px 10px", borderRadius: "12px",
-                background: entry.isCurrentUser ? "#EEF2FF" : "transparent",
-                border: entry.isCurrentUser ? "1px solid #C7D2FE" : "1px solid transparent",
+                background: entry.isCurrentUser ? "var(--accent-light)" : "transparent",
+                border: entry.isCurrentUser ? "1px solid var(--accent-muted)" : "1px solid transparent",
               }}
             >
-              <span style={{ width: "22px", fontSize: "0.78rem", fontWeight: 700, color: "#A1A1AA", textAlign: "center", flexShrink: 0 }}>
+              <span style={{ width: "22px", fontSize: "0.78rem", fontWeight: 700, color: "var(--subtle)", textAlign: "center", flexShrink: 0 }}>
                 #{entry.rank}
               </span>
               <div style={{
                 width: "28px", height: "28px", borderRadius: "50%",
                 background: entry.isCurrentUser
                   ? "linear-gradient(135deg, #6366F1, #8B5CF6)"
-                  : "linear-gradient(135deg, #E4E4E7, #D4D4D8)",
+                  : "var(--bg-tertiary)",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 fontSize: "0.65rem", fontWeight: 700,
-                color: entry.isCurrentUser ? "white" : "#71717A",
+                color: entry.isCurrentUser ? "white" : "var(--muted)",
                 flexShrink: 0,
               }}>{entry.avatar}</div>
 
               <div style={{ flex: 1, minWidth: 0 }}>
                 <p style={{
                   fontSize: "0.8rem", fontWeight: 600,
-                  color: entry.isCurrentUser ? "#4F46E5" : "#0A0A0A",
+                  color: entry.isCurrentUser ? "var(--accent-dark)" : "var(--primary)",
                   whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis",
                 }}>
                   {entry.name}
                   {entry.isCurrentUser && (
                     <span style={{
-                      fontSize: "0.6rem", fontWeight: 700, color: "#4F46E5",
-                      background: "#E0E7FF", padding: "1px 5px",
+                      fontSize: "0.6rem", fontWeight: 700, color: "var(--accent-dark)",
+                      background: "var(--accent-light)", padding: "1px 5px",
                       borderRadius: "999px", marginLeft: "5px",
                     }}>You</span>
                   )}
                 </p>
-                <p style={{ fontSize: "0.68rem", color: "#A1A1AA" }}>{entry.track}</p>
+                <p style={{ fontSize: "0.68rem", color: "var(--subtle)" }}>{entry.track}</p>
               </div>
 
               <div style={{ display: "flex", alignItems: "center", gap: "3px", flexShrink: 0 }}>
                 <span style={{ fontSize: "11px" }}>🔥</span>
-                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#0A0A0A" }}>{entry.streak}</span>
+                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--primary)" }}>{entry.streak}</span>
               </div>
             </motion.div>
           ))}

@@ -6,7 +6,7 @@ const statusColor = {
   completed: "#16a34a",
   missed: "#e5484d",
   pending: "#fbbf24",
-  upcoming: "#eceef1",
+  upcoming: "var(--border)",
 };
 
 const statusLabel = {

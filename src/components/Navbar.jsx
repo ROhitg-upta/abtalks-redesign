@@ -53,12 +53,16 @@ export default function Navbar() {
         transition: 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
-        <div onClick={() => navigate('/')} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <div style={{ width: '32px', height: '32px', background: 'var(--primary)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <span style={{ color: dark ? '#0A0A0A' : 'white', fontSize: '16px', fontWeight: '800', fontFamily: 'var(--font-display)' }}>A</span>
-          </div>
-          <span style={{ fontSize: '17px', fontWeight: '700', fontFamily: 'var(--font-display)', letterSpacing: '-0.03em', color: 'var(--primary)' }}>ABTalks</span>
-        </div>
+       <div onClick={() => navigate('/')} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+  <span style={{
+    fontSize: '20px',
+    fontWeight: '800',
+    fontFamily: 'var(--font-display)',
+    letterSpacing: '0.06em',
+    color: 'var(--primary)',
+    textTransform: 'uppercase',
+  }}>AB <span style={{ fontWeight: '400', letterSpacing: '0.04em' }}>TALKS</span></span>
+</div>
 
         {isLanding && (
           <div style={{ display: 'flex', alignItems: 'center', gap: '28px' }} className="desktop-nav">
@@ -79,7 +83,7 @@ export default function Navbar() {
                 onMouseEnter={e => e.currentTarget.style.background = 'var(--bg-secondary)'}
                 onMouseLeave={e => e.currentTarget.style.background = 'var(--surface)'}
               >Sign in</button>
-              <button onClick={() => navigate('/dashboard')} className="btn-primary" style={{ fontSize: '13px', padding: '8px 16px' }}>Start free</button>
+             <button onClick={() => navigate('/dashboard')} className="btn-primary" style={{ fontSize: '13px', padding: '8px 16px', background: dark ? '#FAFAFA' : '#0A0A0A', color: dark ? '#0A0A0A' : 'white', borderColor: dark ? '#FAFAFA' : '#0A0A0A' }}>Start free</button>
             </>
           ) : (
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
