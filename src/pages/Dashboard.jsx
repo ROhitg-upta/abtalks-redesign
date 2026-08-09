@@ -203,7 +203,7 @@ export default function Dashboard() {
 
         <StreakHeatmap />
         <AchievementsSection />
-        <CountdownTimer />
+   
       </main>
     </div>
   );
