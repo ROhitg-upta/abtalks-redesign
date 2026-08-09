@@ -11,8 +11,8 @@ const fadeUp = {
 
 const STAR_COLORS = {
   "1★": { stars: 1, color: "#71717A", bg: "var(--bg-secondary)",    glow: "rgba(113,113,122,0.2)" },
-  "2★": { stars: 2, color: "#16A34A", bg: "var(--green-light)",     glow: "rgba(22,163,74,0.2)"   },
-  "3★": { stars: 3, color: "#2563EB", bg: "#DBEAFE",                glow: "rgba(37,99,235,0.2)"   },
+  "2★": { stars: 2, color: "#16a3a3", bg: "var(--green-light)",     glow: "rgba(22,163,74,0.2)"   },
+  "3★": { stars: 3, color: "#08296f", bg: "#DBEAFE",                glow: "rgba(37,99,235,0.2)"   },
   "4★": { stars: 4, color: "#7C3AED", bg: "#EDE9FE",                glow: "rgba(124,58,237,0.2)"  },
   "5★": { stars: 5, color: "#EA580C", bg: "var(--orange-light)",    glow: "rgba(234,88,12,0.2)"   },
   "6★": { stars: 6, color: "#CA8A04", bg: "#FEF9C3",                glow: "rgba(202,138,4,0.25)"  },

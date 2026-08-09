@@ -1085,9 +1085,9 @@ img {
   height: 3px;
   border-radius: 20px 20px 0 0;
 }
-.streak-card::before  { background: linear-gradient(90deg, #f97316, #f59e0b); }
-.progress-card::before { background: linear-gradient(90deg, #6366f1, #10b981); }
-.rank-card::before    { background: linear-gradient(90deg, #eab308, #f97316); }
+.streak-card::before  { background: linear-gradient(90deg, #EF4444, #DC2626); }
+.progress-card::before { background: linear-gradient(90deg, #38BDF8, #0EA5E9); }
+.rank-card::before    { background: linear-gradient(90deg, #EAB308, #F59E0B); }
 
 /* Subtle bg pattern */
 .streak-card::after,
@@ -1238,8 +1238,8 @@ img {
 .progress-bar-fill {
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, #6366f1, #10b981);
-  box-shadow: 0 0 8px rgba(99,102,241,0.3);
+  background: linear-gradient(90deg, #258bb7, #277ba1);
+  box-shadow: 0 0 8px rgba(36, 125, 163, 0.4);
 }
 
 /* Rank card number */
@@ -2005,8 +2005,10 @@ img {
   height: 3px;
 }
 
-.stat-card--streak::before { background: linear-gradient(90deg, #F59E0B, #FBBF24); }
-.stat-card--progress::before { background: linear-gradient(90deg, #6366F1, #818CF8); }
+
+
+.stat-card--streak::before { background: linear-gradient(90deg, #e1b209, #7a6c04); }
+.stat-card--progress::before { background: linear-gradient(90deg, #05cad4, #3cc5d2); }
 .stat-card--rank::before { background: linear-gradient(90deg, #8B5CF6, #A78BFA); }
 
 .stat-card-icon {

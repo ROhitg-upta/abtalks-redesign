@@ -118,13 +118,17 @@ export default function Dashboard() {
             </div>
             <div className="progress-bar-track">
               <motion.div
-                className="progress-bar-fill"
-                initial={{ width: 0 }}
-                animate={{
-                  width: `${(student.completedDays / student.totalDays) * 100}%`,
-                }}
-                transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-              />
+  className="progress-bar-fill"
+  initial={{ width: 0 }}
+  animate={{
+    width: `${(student.completedDays / student.totalDays) * 100}%`,
+  }}
+  transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+  style={{
+    background: "linear-gradient(90deg, #38BDF8, #0EA5E9)",
+    boxShadow: "0 0 8px rgba(56,189,248,0.4)",
+  }}
+/>
             </div>
             <p className="stat-sub">
               {student.completedDays} of {student.totalDays} days completed
