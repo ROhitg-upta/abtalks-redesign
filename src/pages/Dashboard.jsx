@@ -1,5 +1,6 @@
 import CountdownTimer from "../components/CountdownTimer";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import data from "../data/data.json";
 import StreakHeatmap from "../components/StreakHeatmap";
@@ -14,9 +15,37 @@ const fadeUp = {
   }),
 };
 
+const NEW_STUDENT_PREVIEW = {
+  name: "New Student",
+  avatar: "NS",
+  track: "Not selected",
+  currentStreak: 0,
+  longestStreak: 0,
+  currentDay: 1,
+  totalDays: 60,
+  completedDays: 0,
+  rank: null,
+  totalStudents: 2400,
+  xp: 0,
+  badges: [],
+};
+
+const NEW_STUDENT_DAYS = Array.from({ length: 60 }, (_, i) => ({
+  day: i + 1,
+  title: "Not started",
+  topic: "",
+  status: "upcoming",
+}));
+
 export default function Dashboard() {
-  const { student, days } = data;
-  const todayTask = days.find((d) => d.status === "pending");
+  const [previewMode, setPreviewMode] = useState(false);
+  const realStudent = data.student;
+  const { days: realDays } = data;
+
+  const student = previewMode ? NEW_STUDENT_PREVIEW : realStudent;
+  const todayTask = previewMode
+    ? { day: 1, title: "Set up your dev environment", topic: "Getting started" }
+    : realDays.find((d) => d.status === "pending");
   const isNewStudent = student.currentStreak === 0;
 
   return (
@@ -36,6 +65,20 @@ export default function Dashboard() {
       </header>
 
       <main className="dash-main">
+        {/* EDGE CASE PREVIEW TOGGLE */}
+        <div className="preview-toggle-bar">
+          <span className="preview-toggle-label">
+            {previewMode ? "Viewing: New student (Day 0)" : "Viewing: Active student"}
+          </span>
+          <button
+            className={`preview-toggle-switch ${previewMode ? "is-on" : ""}`}
+            onClick={() => setPreviewMode((p) => !p)}
+            aria-label="Toggle new student preview"
+          >
+            <span className="preview-toggle-knob" />
+          </button>
+        </div>
+
         <motion.div
           className="dash-greeting"
           variants={fadeUp}
@@ -44,7 +87,8 @@ export default function Dashboard() {
           custom={0}
         >
           <h1>
-            Welcome back, <span className="gradient-text">{student.name.split(" ")[0]}</span>
+            Welcome{previewMode ? "" : " back"},{" "}
+            <span className="gradient-text">{student.name.split(" ")[0]}</span>
           </h1>
           <p>
             {isNewStudent
@@ -53,18 +97,16 @@ export default function Dashboard() {
           </p>
         </motion.div>
 
-         <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={0.5}
-        >
-          <CountdownTimer />
-        </motion.div>
-
-        
-
-        
+        {!previewMode && (
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={0.5}
+          >
+            <CountdownTimer />
+          </motion.div>
+        )}
 
         <div className="dash-top-grid">
           {/* STREAK CARD */}
@@ -118,17 +160,13 @@ export default function Dashboard() {
             </div>
             <div className="progress-bar-track">
               <motion.div
-  className="progress-bar-fill"
-  initial={{ width: 0 }}
-  animate={{
-    width: `${(student.completedDays / student.totalDays) * 100}%`,
-  }}
-  transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-  style={{
-    background: "linear-gradient(90deg, #38BDF8, #0EA5E9)",
-    boxShadow: "0 0 8px rgba(56,189,248,0.4)",
-  }}
-/>
+                className="progress-bar-fill"
+                initial={{ width: 0 }}
+                animate={{
+                  width: `${(student.completedDays / student.totalDays) * 100}%`,
+                }}
+                transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+              />
             </div>
             <p className="stat-sub">
               {student.completedDays} of {student.totalDays} days completed
@@ -205,9 +243,12 @@ export default function Dashboard() {
           )}
         </motion.div>
 
-        <StreakHeatmap />
-        <AchievementsSection />
-   
+        <StreakHeatmap
+          daysOverride={previewMode ? NEW_STUDENT_DAYS : undefined}
+          studentOverride={previewMode ? student : undefined}
+        />
+        <AchievementsSection studentOverride={previewMode ? student : undefined} />
+
       </main>
     </div>
   );

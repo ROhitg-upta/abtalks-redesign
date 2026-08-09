@@ -42,8 +42,9 @@ function FlameIcon({ size = 20, color = "#F97316" }) {
   );
 }
 
-export default function StreakHeatmap() {
-  const { days, student } = data;
+export default function StreakHeatmap({ daysOverride, studentOverride }) {
+  const days = daysOverride || data.days;
+  const student = studentOverride || data.student;
   const [hovered, setHovered] = useState(null);
 
   const completed = days.filter(d => d.status === "completed").length;
@@ -67,7 +68,6 @@ export default function StreakHeatmap() {
         overflow: "hidden",
       }}
     >
-      {/* Subtle bg glow */}
       <div style={{
         position: "absolute",
         top: "-40px", right: "-40px",
@@ -76,7 +76,6 @@ export default function StreakHeatmap() {
         pointerEvents: "none",
       }} />
 
-      {/* Header */}
       <div style={{
         display: "flex",
         alignItems: "flex-start",
@@ -94,7 +93,6 @@ export default function StreakHeatmap() {
           </h2>
         </div>
 
-        {/* Stats pills */}
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           <div style={{
             display: "flex", alignItems: "center", gap: "6px",
@@ -133,7 +131,6 @@ export default function StreakHeatmap() {
         </div>
       </div>
 
-      {/* Week labels — 7 cols */}
       <div style={{
         display: "grid",
         gridTemplateColumns: "repeat(7, 1fr)",
@@ -149,7 +146,6 @@ export default function StreakHeatmap() {
         ))}
       </div>
 
-      {/* Heatmap grid — 7 cols × rows */}
       <div style={{
         display: "grid",
         gridTemplateColumns: "repeat(7, 1fr)",
@@ -212,7 +208,6 @@ export default function StreakHeatmap() {
         })}
       </div>
 
-      {/* Tooltip bar */}
       <div style={{
         borderTop: "1px solid var(--border)",
         paddingTop: "14px",
@@ -268,7 +263,6 @@ export default function StreakHeatmap() {
         </AnimatePresence>
       </div>
 
-      {/* Motivational bar */}
       <div style={{
         marginTop: "16px",
         padding: "12px 16px",
@@ -284,10 +278,12 @@ export default function StreakHeatmap() {
           <FlameIcon size={16} color={student.currentStreak >= 7 ? "#F97316" : "#A1A1AA"} />
           <p style={{ fontSize: "0.78rem", fontWeight: 600, color: student.currentStreak >= 7 ? "#EA580C" : "var(--muted)" }}>
             {student.currentStreak >= 30
-              ? "Legendary! 30+ day streak 🏆"
+              ? "Legendary! 30+ day streak"
               : student.currentStreak >= 7
               ? `${student.currentStreak} days strong — don't break it now!`
-              : `${student.longestStreak - student.currentStreak} more days to beat your record`}
+              : student.currentStreak === 0
+              ? "Start today to begin your streak"
+              : `${Math.max(student.longestStreak - student.currentStreak, 0)} more days to beat your record`}
           </p>
         </div>
         <div style={{ fontSize: "0.72rem", fontWeight: 700, color: "var(--muted)", flexShrink: 0 }}>
