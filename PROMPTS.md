@@ -10,6 +10,7 @@
 
 ---
 
+
 ## Prompt 2 — Mock Data
 **Tool:** Claude
 **Prompt:** "ABTalks redesign ke liye complete data.json banao jisme student profile, 60 days curriculum, leaderboard, tracks, testimonials, platform stats ho. Realistic mocked data chahiye, including an empty/new-student state for edge case testing."
